@@ -1,14 +1,14 @@
 # stop all the docker
-docker stop $(docker ps -q)
+docker stop muleContainer
 
 # remove the network
-docker network rm $(docker network ls -q)
+docker network rm muleNetwork
 
 # remove the container
-docker rm $(docker ps -a -q)
+docker rm muleContainer
 
 # remove the images
-docker rmi $(docker images -q)
+docker rmi muleindocker/mule:latest
 
-# clean the volume
+# clean all the volume
 docker volume rm $(docker volume ls -qf dangling=true)
