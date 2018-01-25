@@ -16,5 +16,9 @@ RUN chmod u+x /home/muleindocker/mule-standalone-3.7.0/lib/boot/exec/wrapper*
 # Use a symbolic link to be agnostic of the name (with the version)
 RUN ln -s /home/muleindocker/mule-standalone-3.7.0 /home/muleindocker/mule
 
+# Expose volumes (logs and apps)
+VOLUME /home/muleindocker/mule-standalone-3.7.0/apps
+VOLUME /home/muleindocker/mule-standalone-3.7.0/logs
+
 # Start mule standalone
 CMD [ "/home/muleindocker/mule/bin/mule" ]
