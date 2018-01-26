@@ -1,0 +1,106 @@
+{
+	"info": {
+		"name": "muleInDocker-nrg",
+		"_postman_id": "658a791a-52cb-7afa-f735-0f3f7dd24f90",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "01 - version",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "4edb5f21-4733-452c-a426-a9e5afa6967a",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "{{hostname}}:{{hostport}}/version",
+					"host": [
+						"{{hostname}}"
+					],
+					"port": "{{hostport}}",
+					"path": [
+						"version"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "02 - hello",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "4edb5f21-4733-452c-a426-a9e5afa6967a",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 200\"] = responseCode.code === 200;"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "{{hostname}}:{{hostport}}/hello",
+					"host": [
+						"{{hostname}}"
+					],
+					"port": "{{hostport}}",
+					"path": [
+						"hello"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "03 - no end point",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "835d3c3c-8d68-47bc-8285-c3885d89686c",
+						"type": "text/javascript",
+						"exec": [
+							"tests[\"Status code is 404\"] = responseCode.code === 404;"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "{{hostname}}:{{hostport}}/emptyEndpoint",
+					"host": [
+						"{{hostname}}"
+					],
+					"port": "{{hostport}}",
+					"path": [
+						"emptyEndpoint"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
