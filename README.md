@@ -1,21 +1,21 @@
 # muleInDocker
 
 The project id to being able to build a full mule project and to run it on a Docker container.
+With the nrg test and the performance one.
 
-# Simple exemple to get java version
+# Run the project step by step
 
-You can (it's not an obligation) use the script to make it easier.
-First I use the script clean.sh to clean the docker engine:
--> stop the container
--> remove the network
--> remove the images
--> remove the volumes
+## Needed
 
-Now you have nothing on you docker engine you can work.
-Use the script build to build the mule image from the Docker in ./mule/Dockerfile
+-> internet connection
+-> docker engine
 
-You can start the container with the image muleindocker/mule:latest.
-To do that use the script start.sh (the container will shutdown directly).
-It normal because it's only run a simple java version command.
-To be sure it's work you can that:
--> $ docker run -t muleindocker/mule:latest
+## Process
+
+I made some script to make it easy to use.
+The live cycle of the project is the following:
+-> clean.sh: you can clean you workspace if you want with.
+-> build.sh: build the projec.
+-> start.sh: start mule an build the zip of the mule project.
+-> deploy.sh: when the maven container stop that mean you can deploy your zip inside your volume (mount on mule containre)
+-> testNrg.sh: it's will run the nrg test and show in the terminal the result.
