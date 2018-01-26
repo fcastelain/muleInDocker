@@ -8,9 +8,14 @@ http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/cor
 http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
     <http:listener-config name="HTTP_Listener_Configuration" host="localhost" port="8081" doc:name="HTTP Listener Configuration"/>
     
-    <flow name="muleindockerFlow">
-        <http:listener config-ref="HTTP_Listener_Configuration" path="/" doc:name="HTTP"/>
-        <set-payload doc:name="Set Payload" value="Hello World!"/>
+    <flow name="versionFlow">
+        <http:listener config-ref="HTTP_Listener_Configuration" path="/version" doc:name="HTTP"/>
+        <set-payload doc:name="Set Payload" value="1.0.0-SNAPSHOT"/>
+    </flow>
+    
+    <flow name="helloFlow">
+        <http:listener config-ref="HTTP_Listener_Configuration" path="/hello" doc:name="HTTP"/>
+        <set-payload doc:name="Set Payload" value="Hello world!"/>
     </flow>
     
 </mule>
