@@ -1,0 +1,11 @@
+---
+
+- name: "Stop all containers"
+  shell: "./stop-all.sh"
+  args:
+    chdir: "{{ compose_path }}"
+
+- name: "Start all containers"
+  shell: "./start-all.sh"
+  args:
+    chdir: "{{ compose_path }}"

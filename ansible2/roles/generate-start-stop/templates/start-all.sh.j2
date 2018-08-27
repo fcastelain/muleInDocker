@@ -1,0 +1,7 @@
+#!/bin/bash
+
+cd $(dirname "$0")
+
+{% for app in start_stop_all_applications %}
+docker-compose -f ./docker-compose-{{ app }}.yml up -d
+{% endfor %}

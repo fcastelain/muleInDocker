@@ -1,0 +1,11 @@
+---
+
+- name: "Stop application"
+  shell: "./stop-{{ app }}.sh"
+  args:
+    chdir: "{{ compose_path }}"
+
+- name: "Start application"
+  shell: "./start-{{ app }}.sh"
+  args:
+    chdir: "{{ compose_path }}"
