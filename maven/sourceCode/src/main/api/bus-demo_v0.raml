@@ -1,0 +1,23 @@
+#%RAML 0.8
+baseUri: https://mocksvc.mulesoft.com/mocks/d776b102-74d1-4498-9603-674008cd3f09
+title: Excilys - Bus demo
+version: 1.0
+
+/version:
+  get:
+    description: Return the version of the application
+    responses:
+      200:
+          description: |
+          body:
+            application/json:
+      400:
+          description: |
+           error detected in body request
+          body:
+            application/json:
+      500:
+          description: |
+           system or funtionnal error detected
+          body:
+            application/json:
