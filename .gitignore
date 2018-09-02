@@ -1,0 +1,4 @@
+mule/logs/**
+mule/apps/**
+maven/sourceCode/target/**
+newman/reports/**
