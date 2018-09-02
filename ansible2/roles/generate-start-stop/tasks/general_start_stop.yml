@@ -1,0 +1,13 @@
+---
+
+- name: "Generate start all applications file"
+  template:
+    src: "start-all.sh.j2"
+    dest: "{{ compose_path }}/start-all.sh"
+    mode: "u=rwx,g=rwx,o=r"
+
+- name: "Generate stop all applications file"
+  template:
+    src: "stop-all.sh.j2"
+    dest: "{{ compose_path }}/stop-all.sh"
+    mode: "u=rwx,g=rwx,o=r"

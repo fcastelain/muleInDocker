@@ -1,0 +1,9 @@
+---
+
+- include: general_start_stop.yml
+  tags:
+    - all_start_stop
+
+- include: unit_start_stop.yml
+  tags:
+    - unit_start_stop
