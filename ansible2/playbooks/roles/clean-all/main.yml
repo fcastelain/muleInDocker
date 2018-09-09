@@ -1,0 +1,6 @@
+---
+
+- name: "Clean all the containes"
+  shell: "./clean-all.sh"
+  args:
+    chdir: "{{params.core.clusterPath}}"

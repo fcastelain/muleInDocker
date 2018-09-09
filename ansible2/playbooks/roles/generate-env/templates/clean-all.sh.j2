@@ -1,0 +1,18 @@
+# stop all the docker
+docker stop {{params.environment.type}}-muleContainer
+
+# remove the network
+docker network rm {{params.environment.type}}-muleNetwork
+
+# remove the container
+docker rm {{params.environment.type}}-muleContainer
+docker rm {{params.environment.type}}-mavenContainer
+docker rm {{params.environment.type}}-newmanContainer
+
+# remove the images
+docker rmi {{params.environment.type}}-muleindocker/mule:latest
+docker rmi {{params.environment.type}}-muleindocker/maven:latest
+docker rmi {{params.environment.type}}-muleindocker/newman:latest
+
+# clean all the volume
+docker volume rm $(docker volume ls -qf dangling=true)

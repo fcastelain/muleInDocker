@@ -1,0 +1,6 @@
+---
+
+- name: "Deploy mule in apps all the containes"
+  shell: "./deploy-all.sh"
+  args:
+    chdir: "{{params.core.clusterPath}}"

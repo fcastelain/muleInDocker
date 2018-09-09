@@ -1,0 +1,26 @@
+---
+
+- name: "Generate build applications file"
+  template:
+    src: "build-all.sh.j2"
+    dest: "{{ params.core.clusterPath }}/build-all.sh"
+    mode: "u=rwx,g=rwx,o=r"
+
+- name: "Generate clean applications file"
+  template:
+    src: "clean-all.sh.j2"
+    dest: "{{ params.core.clusterPath }}/clean-all.sh"
+    mode: "u=rwx,g=rwx,o=r"
+
+- name: "Generate run applications file"
+  template:
+    src: "run-all.sh.j2"
+    dest: "{{ params.core.clusterPath }}/run-all.sh"
+    mode: "u=rwx,g=rwx,o=r"
+
+- name: "Generate deploy applications file"
+  template:
+    src: "deploy-all.sh.j2"
+    dest: "{{ params.core.clusterPath }}/deploy-all.sh"
+    mode: "u=rwx,g=rwx,o=r"
+

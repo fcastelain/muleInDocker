@@ -1,0 +1,11 @@
+# now we create the network of production
+docker network create --subnet=172.19.{{params.environment.number}}.0/16 {{params.environment.type}}-muleNetwork
+
+# Build the image of the muleInDocker/mule
+docker build {{params.core.clusterPath}}mule/ --tag {{params.environment.type}}-muleindocker/mule:latest
+
+# Build the image of the maven container to biuld the mule's project
+docker build {{params.core.clusterPath}}maven/ --tag {{params.environment.type}}-muleindocker/maven:latest
+
+# Build the image of the newman test container
+docker build {{params.core.clusterPath}}newman/ --tag {{params.environment.type}}-muleindocker/newman:latest

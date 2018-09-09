@@ -1,0 +1,7 @@
+---
+
+- name: "Generate deploy applications file"
+  template:
+    src: "deploy-all.sh.j2"
+    dest: "{{ core.clusterPath }}/deploy-all.sh"
+    mode: "u=rwx,g=rwx,o=r"

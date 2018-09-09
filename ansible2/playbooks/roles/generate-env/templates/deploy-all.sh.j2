@@ -1,0 +1,5 @@
+# Remove the old version of the bus using anchor
+rm {{params.core.clusterPath}}mule/apps/muleindocker-anchor.txt
+
+# Deploy the new version of the bus on mulesoft
+cp {{params.core.clusterPath}}maven/sourceCode/target/muleindocker-*.zip {{params.core.clusterPath}}mule/apps/muleindocker.zip

@@ -1,0 +1,6 @@
+---
+
+- name: "Run all the containes"
+  shell: "./run-all.sh"
+  args:
+    chdir: "{{params.core.clusterPath}}"

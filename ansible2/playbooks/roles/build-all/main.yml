@@ -1,0 +1,6 @@
+---
+
+- name: "Build all the containes"
+  shell: "./build-all.sh"
+  args:
+    chdir: "{{params.core.clusterPath}}"

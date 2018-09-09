@@ -1,6 +1,0 @@
-#!/bin/sh
-
-cd $(dirname "$0")
-
-docker-compose -f ./docker-compose-{{ app }}.yml stop
-echo y | docker-compose -f ./docker-compose-{{ app }}.yml rm

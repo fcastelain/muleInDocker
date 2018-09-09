@@ -1,0 +1,9 @@
+---
+
+- include: deploy_script.yml
+  tags:
+    - deploy_script
+
+- include: deploy_apps.yml
+  tags:
+    - deploy_apps

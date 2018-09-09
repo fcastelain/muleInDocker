@@ -1,0 +1,16 @@
+---
+
+- name: "Deploy mule software"
+  copy:
+    src: "{{ params.core.repoPath }}mule/"
+    dest: "{{ params.core.clusterPath }}mule"
+
+- name: "Deploy maven software"
+  copy:
+    src: "{{ params.core.repoPath }}maven/"
+    dest: "{{ params.core.clusterPath }}maven"
+
+- name: "Generate run applications file"
+  copy:
+    src: "{{ params.core.repoPath }}newman/"
+    dest: "{{ params.core.clusterPath }}newman"
