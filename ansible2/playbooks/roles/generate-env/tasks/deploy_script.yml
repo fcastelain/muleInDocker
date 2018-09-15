@@ -24,3 +24,8 @@
     dest: "{{ params.core.clusterPath }}/deploy-all.sh"
     mode: "u=rwx,g=rwx,o=r"
 
+- name: "Generate run nrg test file"
+  template:
+    src: "run-nrg.sh.j2"
+    dest: "{{ params.core.clusterPath }}/run-nrg.sh"
+    mode: "u=rwx,g=rwx,o=r"

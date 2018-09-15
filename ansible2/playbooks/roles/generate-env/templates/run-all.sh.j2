@@ -3,6 +3,3 @@ docker run --net {{params.environment.type}}-muleNetwork --ip 172.19.{{params.en
 
 # Start the maven container
 docker run --net {{params.environment.type}}-muleNetwork --ip 172.19.{{params.environment.number}}.3 -v {{params.core.clusterPath}}maven/sourceCode:/usr/src -dti --name {{params.environment.type}}-mavenContainer {{params.environment.type}}-muleindocker/maven:latest mvn clean install
-
-# run nrg test on the instance of the mule soft
-docker run --name {{params.environment.type}}-newmanContainer --net {{params.environment.type}}-muleNetwork --ip 172.19.{{params.environment.number}}.4 -t {{params.environment.type}}-muleindocker/newman:latest --collection="collection/muleInDocker-nrg.postman_collection.json" --environment="environment/{{params.environment.type}}.postman_environment.json" --html="newman-results.html"
