@@ -1,0 +1,7 @@
+---
+
+- name: "Generate deploy newman conf file"
+  template:
+    src: "postman_environment.json.j2"
+    dest: "{{ params.core.clusterPath }}/newman/environment/{{ params.environment.type }}.postman_environment.json"
+    mode: "u=rwx,g=rwx,o=r"
