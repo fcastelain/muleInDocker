@@ -1,1 +1,10 @@
-../../commons/all.yml
+# Init the common params
+params:
+  # Global vars
+  core:
+    clusterPath: "/home/castefl/Documents/cluster/prd/"
+    repoPath: "/home/castefl/Documents/muleInDocker/"
+  # Set the custom params of the int env
+  environment:
+    type: "prd"
+    number: "5"

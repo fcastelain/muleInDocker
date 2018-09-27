@@ -1,5 +1,5 @@
 # run nrg test on the instance of the mule soft
-docker run --name {{params.environment.type}}-newmanContainer --net {{params.environment.type}}-muleNetwork --ip 172.19.{{params.environment.number}}.4 -t {{params.environment.type}}-muleindocker/newman:latest --collection="collection/muleInDocker-nrg.postman_collection.json" --environment="environment/{{params.environment.type}}.postman_environment.json" --html="newman-results.html"
+docker run --name {{params.environment.type}}-newmanContainer --net {{params.environment.type}}-muleNetwork --ip 172.{{params.environment.number}}.0.4 -t {{params.environment.type}}-muleindocker/newman:latest --collection="collection/muleInDocker-nrg.postman_collection.json" --environment="environment/{{params.environment.type}}.postman_environment.json" --html="newman-results.html"
 
 # remove the container when it's over
 docker rm {{params.environment.type}}-newmanContainer

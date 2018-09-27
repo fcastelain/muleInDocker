@@ -1,5 +1,5 @@
 # now we create the network of production
-docker network create --subnet=172.19.{{params.environment.number}}.0/16 {{params.environment.type}}-muleNetwork
+docker network create --subnet=172.{{params.environment.number}}.0.0/16 {{params.environment.type}}-muleNetwork
 
 # Build the image of the muleInDocker/mule
 docker build {{params.core.clusterPath}}mule/ --tag {{params.environment.type}}-muleindocker/mule:latest
